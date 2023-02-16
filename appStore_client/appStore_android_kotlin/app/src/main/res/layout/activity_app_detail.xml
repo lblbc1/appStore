@@ -48,19 +48,20 @@
                 android:layout_marginTop="5dp">
 
                 <TextView
-                    android:id="@+id/fileSizeTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="100M"
-                    android:textColor="#3C3C3C" />
-
-                <TextView
                     android:id="@+id/downloadCountTv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
                     android:text="100万次下载"
                     android:textColor="#3C3C3C" />
+
+                <TextView
+                    android:id="@+id/fileSizeTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="100M"
+                    android:textColor="#3C3C3C" />
+
             </LinearLayout>
 
             <View
