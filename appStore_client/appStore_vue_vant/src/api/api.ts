@@ -12,6 +12,6 @@ export const queryApp = (id: string) => {
 	return axiosInstance.get('appstore/app/'+id);
 }
 
-export function search(keyword) {
+export function search(keyword: string) {
 	return axiosInstance.get(`appstore/appsBySearch?keyword=${keyword}`);
 }
