@@ -8,13 +8,11 @@
   <div>
   <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft">
   <template #right>
-    <div class="header-search">
       <van-search
         v-model="searchKeyword"
-        placeholder="请输入搜索关键词"
+        placeholder="请输入搜索关键词1"
         @search="onSearch"
       />
-    </div>
   </template>
 
 </van-nav-bar>
