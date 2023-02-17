@@ -45,7 +45,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { search } from '@/api/api'
+import { search } from '@/common/api'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()

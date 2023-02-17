@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue'
-import { queryCategories, queryAppsByCategory } from '@/api/api'
+import { queryCategories, queryAppsByCategory } from '@/common/api'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
