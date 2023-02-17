@@ -6,18 +6,16 @@
  -->
 <template>
   <div>
-  <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft">
-  <template #right>
-      <van-search
-        v-model="searchKeyword"
-        placeholder="请输入搜索关键词1"
-        @search="onSearch"
-      />
-  </template>
+    <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft">
+      <template #right>
+        <van-search
+          v-model="searchKeyword"
+          placeholder="请输入搜索关键词"
+          @search="onSearch"
+        />
+      </template>
+    </van-nav-bar>
 
-</van-nav-bar>
-
-    
     <div>
       <van-list finished-text="到底啦">
         <div class="row" v-for="(item, index) in apps" :key="index">
@@ -69,14 +67,6 @@ const download = async (apkUrl) => {
 </script>
 
 <style scoped>
-.header-search {
-  display: flex;
-  height: 20px;
-  width: 100%;
-  line-height: 20px;
-  margin: 10px 0;
-  padding: 5px 0;
-}
 .row {
   display: flex;
   margin-left: 20px;
