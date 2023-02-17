@@ -8,8 +8,8 @@ export const queryAppsByCategory = (categoryId: string) => {
 	return axiosInstance.get('appstore/apps?categoryId='+categoryId);
 }
 
-export const queryApp = (blogId: string) => {
-	return axiosInstance.get('appstore/app/'+blogId);
+export const queryApp = (id: string) => {
+	return axiosInstance.get('appstore/app/'+id);
 }
 
 export function search(keyword) {
