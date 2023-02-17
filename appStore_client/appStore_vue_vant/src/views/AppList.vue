@@ -10,9 +10,7 @@
       <span class="title-text">应用市场</span>
       <div class="search_row">
         <van-icon name="search" />
-        <router-link tag="span" to="/appstore/searchApp"
-          >点击搜索</router-link
-        >
+        <router-link tag="span" to="/appstore/searchApp">点击搜索</router-link>
       </div>
     </div>
     <van-tabs v-model:active="active" @click-tab="onClickTab">
@@ -25,15 +23,26 @@
 
     <div>
       <van-list finished-text="到底啦">
-        <van-card
-          v-for="(item, index) in apps"
-          :key="index"
-          :desc="item.downloadCount + '  ' + item.fileSize"
-          :title="item.name"
-          :thumb="item.logoUrl"
-          @click="gotoAppDetail(item.id)"
-          centered
-        />
+        <div class="row" v-for="(item, index) in apps" :key="index">
+          <van-image
+            class="logo"
+            :src="item.logoUrl"
+            @click="gotoAppDetail(item.id)"
+          />
+          <div class="col" @click="gotoAppDetail(item.id)">
+            <div class="app-name">{{ item.name }}</div>
+            <div class="app-info">
+              {{ item.downloadCount }} {{ item.fileSize }}
+            </div>
+          </div>
+          <van-button
+            @click="download(item.apkUrl)"
+            class="btn"
+            type="primary"
+            size="large"
+            >下载</van-button
+          >
+        </div>
       </van-list>
     </div>
   </div>
@@ -68,6 +77,10 @@ const gotoAppDetail = async (id) => {
   router.push(`/appstore/appDetail?id=${id}`)
 }
 
+const download = async (apkUrl) => {
+  location.href = apkUrl
+}
+
 onMounted(() => {
   queryCategoryData()
 })
@@ -93,14 +106,32 @@ onMounted(() => {
   border-width: 2px;
   border-radius: 20px;
 }
-.bottom-wrapper {
-  position: fixed;
-  bottom: 0;
-  right: 0;
+.row {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
 }
-.add-img {
-  color: #418df9;
-  margin-bottom: 30px;
-  margin-right: 30px;
+.col {
+  margin-left: 20px;
+  font-size: 15px;
+  flex: 1;
+}
+.app-name {
+  color: #333333;
+}
+.app-info {
+  color: #666666;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+}
+.btn {
+  width: 80px;
+  height: 40px;
+  border-radius: 2rem;
+  background-color: #418df9;
+  color: #fff;
+  margin-right: 20px;
 }
 </style>
