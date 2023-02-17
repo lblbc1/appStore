@@ -135,5 +135,6 @@ onMounted(() => {
   color: #fff;
   margin-right: 20px;
   text-align: center;
+  font-size: 16px;
 }
 </style>
