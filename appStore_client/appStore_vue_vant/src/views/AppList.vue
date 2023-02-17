@@ -129,9 +129,11 @@ onMounted(() => {
 .btn {
   width: 80px;
   height: 40px;
+  line-height: 40px;
   border-radius: 2rem;
   background-color: #418df9;
   color: #fff;
   margin-right: 20px;
+  text-align: center;
 }
 </style>
