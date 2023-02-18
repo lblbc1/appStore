@@ -80,11 +80,6 @@ export default {
     getCurrentCategoryId() {
       return this.categories[this.current].id
     },
-    gotoSearch() {
-      // uni.navigateTo({
-      // 	url: '/pages/search'
-      // });
-    },
     gotoAppDetail(id) {
       this.$router.push(`/appstore/appDetail?id=${id}`)
     },
