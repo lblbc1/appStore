@@ -1,0 +1,29 @@
+{
+	"pages": [
+		{
+			"path": "pages/app-list",
+			"style": {
+				"navigationBarTitleText": "应用市场-蓝不蓝编程"
+			}
+		},
+		{
+			"path": "pages/search",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/app-detail",
+			"style": {
+				"navigationBarTitleText": "应用详情"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "蓝不蓝编程",
+		"navigationBarBackgroundColor": "#418DF9",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}
