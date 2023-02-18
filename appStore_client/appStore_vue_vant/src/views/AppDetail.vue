@@ -88,13 +88,7 @@ onMounted(() => {
 .logo {
   width: 3rem;
   height: 3rem;
-}
-.bottom-wrapper {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 30px;
+  margin-top: 20px;
 }
 .description{
   margin-top: 20px;
@@ -102,11 +96,16 @@ onMounted(() => {
   margin-right: 10px;
   font-size: medium;
 }
+.bottom-wrapper {
+  width: 100%;
+  text-align: center;
+}
 .btn {
   width: 200px;
   height: 40px;
   border-radius: 2rem;
   background-color: #418df9;
   color: #fff;
+  margin-bottom: 20px;
 }
 </style>
