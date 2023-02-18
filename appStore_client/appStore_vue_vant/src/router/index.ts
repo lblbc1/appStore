@@ -23,7 +23,7 @@ const routes: Array<RouteRecordRaw> = [
 			title: "搜索",
 			keepAlive: true
 		},
-		component: () => import("../views/SearchApp.vue"),
+		component: () => import("../views/Search.vue"),
 	},
 ];
 const router = createRouter({
