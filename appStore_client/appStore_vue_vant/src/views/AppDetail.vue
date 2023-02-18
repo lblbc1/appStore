@@ -29,53 +29,52 @@
       radius="10"
     />
   </div>
-  <div v-html="description" class="description"> </div>
+  <div v-html="description" class="description"></div>
   <div class="bottom-wrapper">
-    <van-button
-      @click="download"
-      class="btn"
-      type="primary"
-      size="large"
+    <van-button @click="download" class="btn" type="primary" size="large"
       >下载</van-button
     >
   </div>
 </template>
 
-<script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+
+<script>
 import { queryApp } from '@/common/api'
-
-const route = useRoute()
-const name = ref('')
-const downloadCount = ref('')
-const fileSize = ref('')
-const apkUrl = ref('')
-const logoUrl = ref('')
-const screenShots = ref([])
-const description = ref('')
-
-const onClickLeft = () => history.back()
-
-const queryData = async (id) => {
-  const result = await queryApp(id)
-  name.value = result.data.name
-  downloadCount.value = result.data.downloadCount
-  fileSize.value = result.data.fileSize
-  logoUrl.value = result.data.logoUrl
-  apkUrl.value = result.data.apkUrl
-  screenShots.value = result.data.screenShotUrls.split(',')
-  description.value = result.data.description.replaceAll(/\\n/g,'<br>')
+export default {
+  data() {
+    return {
+      name: '',
+      downloadCount: '',
+      fileSize: '',
+      apkUrl: '',
+      logoUrl: '',
+      screenShots: [],
+      description: ''
+    }
+  },
+  mounted() {
+    var id = this.$route.query.id;
+    this.queryData(id)
+  },
+  methods: {
+    onClickLeft() {
+      history.back()
+    },
+    async queryData(id) {
+      const resp = await queryApp(id)
+      this.name = resp.data.name
+      this.downloadCount = resp.data.downloadCount
+      this.fileSize = resp.data.fileSize
+      this.logoUrl = resp.data.logoUrl
+      this.apkUrl = resp.data.apkUrl
+      this.screenShots = resp.data.screenShotUrls.split(',')
+      this.description = resp.data.description.replaceAll(/\\n/g, '<br>')
+    },
+    download() {
+      location.href = this.apkUrl
+    }
+  }
 }
-
-const download = async () => {
-  location.href = apkUrl.value
-}
-
-onMounted(() => {
-  var appId = route.query.id.toString()
-  queryData(appId)
-})
 </script>
 
 <style scoped>
@@ -89,27 +88,27 @@ onMounted(() => {
   height: 3rem;
   margin-top: 20px;
 }
-.description{
+.description {
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
   font-size: medium;
 }
 .bottom-wrapper {
-		display: flex;
-		width: 100%;
-		text-align: center;
-		justify-content: center;
-		margin-top: 20px;
-		padding-bottom: 20px;
-	}
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
 
-	.btn {
-		width: 200px;
-		height: 40px;
-		line-height: 40px;
-		border-radius: 2rem;
-		background-color: #418df9;
-		color: #fff;
-	}
+.btn {
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 2rem;
+  background-color: #418df9;
+  color: #fff;
+}
 </style>

@@ -9,9 +9,9 @@
     <van-nav-bar left-text="返回" left-arrow @click-left="onClickLeft">
       <template #right>
         <van-search
-          v-model="keyword"
+          v-model="searchKeyword"
           placeholder="请输入搜索关键词"
-          @search="searchApp"
+          @search="onSearch"
         />
       </template>
     </van-nav-bar>
@@ -43,34 +43,26 @@
   </div>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
+import { ref } from 'vue'
 import { search } from '@/common/api'
-export default {
-  data() {
-    return {
-      apps: [],
-      keyword: ''
-    }
-  },
-  methods: {
-    onClickLeft() {
-      history.back()
-    },
-    _bindinput(e) {
-      this.keyword = e.detail.value
-    },
-    searchApp() {
-      search(this.keyword).then((resp) => {
-        this.apps = resp.data
-      })
-    },
-    gotoAppDetail(id) {
-      this.$router.push(`/appstore/appDetail?id=${id}`)
-    },
-    download(apkUrl) {
-      location.href = apkUrl
-    }
-  }
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const apps = ref([])
+const searchKeyword = ref('')
+const onClickLeft = () => history.back()
+const onSearch = async () => {
+  const result = await search(searchKeyword.value)
+  apps.value = result.data
+}
+
+const gotoAppDetail = async (id) => {
+  router.push(`/appstore/appDetail?id=${id}`)
+}
+
+const download = async (apkUrl) => {
+  location.href = apkUrl
 }
 </script>
 
