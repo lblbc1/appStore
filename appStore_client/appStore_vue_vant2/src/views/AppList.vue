@@ -13,7 +13,7 @@
         <router-link tag="span" to="/appstore/searchApp">点击搜索</router-link>
       </div>
     </div>
-    <van-tabs v-model:active="active" @click-tab="onClickTab">
+    <van-tabs v-model:active="current" @click-tab="tabSelect">
       <van-tab
         v-for="(item, index) in categories"
         :key="index"
@@ -47,43 +47,52 @@
     </div>
   </div>
 </template>
-
-<script setup lang="ts">
-import { onMounted, ref } from 'vue'
+<script lang="ts">
 import { queryCategories, queryAppsByCategory } from '@/common/api'
-import { useRouter } from 'vue-router'
+export default {
+  data() {
+    return {
+      categories: [],
+      apps: [],
+      current: 0
+    }
+  },
+  mounted() {
+    this.queryCategories()
+  },
+  methods: {
+    tabSelect: function (e) {
+      this.current = e.currentTarget.dataset.id
+      this.queryAppsByCategory()
+    },
+    queryCategories() {
+      queryCategories().then((resp) => {
+        this.categories = resp.data
+        this.queryAppsByCategory()
+      })
+    },
+    queryAppsByCategory() {
+      queryAppsByCategory(this.getCurrentCategoryId()).then((resp) => {
+        this.apps = resp.data
+      })
+    },
 
-const router = useRouter()
-const categories = ref([])
-const apps = ref([])
-const active = ref(0)
-const onClickTab = () => {
-  queryApps()
+    getCurrentCategoryId() {
+      return this.categories[this.current].id
+    },
+    gotoSearch() {
+      // uni.navigateTo({
+      // 	url: '/pages/search'
+      // });
+    },
+    gotoAppDetail(id) {
+      this.$router.push(`/appstore/appDetail?id=${id}`)
+    },
+    download(apkUrl) {
+      location.href = apkUrl
+    }
+  }
 }
-
-const queryCategoryData = async () => {
-  const result = await queryCategories()
-  categories.value = result.data
-  queryApps()
-}
-
-const queryApps = async () => {
-  let selectedCategoryId = categories.value[active.value].id
-  const result = await queryAppsByCategory(selectedCategoryId)
-  apps.value = result.data
-}
-
-const gotoAppDetail = async (id) => {
-  router.push(`/appstore/appDetail?id=${id}`)
-}
-
-const download = async (apkUrl) => {
-  location.href = apkUrl
-}
-
-onMounted(() => {
-  queryCategoryData()
-})
 </script>
 
 <style scoped>
