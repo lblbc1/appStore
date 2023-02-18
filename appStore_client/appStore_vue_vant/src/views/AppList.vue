@@ -48,7 +48,7 @@
   </div>
 </template>
 <script lang="ts">
-import { queryCategories, queryAppsByCategory } from '@/common/api'
+import { queryCategories, queryAppsByCategory } from '../common/api'
 export default {
   data() {
     return {

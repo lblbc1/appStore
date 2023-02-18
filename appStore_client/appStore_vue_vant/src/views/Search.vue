@@ -44,7 +44,7 @@
 </template>
 
 <script lang="ts">
-import { search } from '@/common/api'
+import { search } from '../common/api'
 export default {
   data() {
     return {

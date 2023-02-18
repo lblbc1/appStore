@@ -39,7 +39,7 @@
 
 
 <script>
-import { queryApp } from '@/common/api'
+import { queryApp } from '../common/api'
 export default {
   data() {
     return {
