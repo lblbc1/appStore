@@ -60,7 +60,6 @@ export default {
       this.keyword = e.detail.value
     },
     searchApp() {
-      let _this = this
       search(this.keyword).then((resp) => {
         this.apps = resp.data
       })
