@@ -47,7 +47,6 @@ import { useRoute, useRouter } from 'vue-router'
 import { queryApp } from '@/common/api'
 
 const route = useRoute()
-const appId = ref('')
 const name = ref('')
 const downloadCount = ref('')
 const fileSize = ref('')
@@ -74,8 +73,8 @@ const download = async () => {
 }
 
 onMounted(() => {
-  appId.value = route.query.id.toString()
-  queryData(appId.value)
+  var appId = route.query.id.toString()
+  queryData(appId)
 })
 </script>
 
@@ -97,15 +96,20 @@ onMounted(() => {
   font-size: medium;
 }
 .bottom-wrapper {
-  width: 100%;
-  text-align: center;
-}
-.btn {
-  width: 200px;
-  height: 40px;
-  border-radius: 2rem;
-  background-color: #418df9;
-  color: #fff;
-  margin-bottom: 20px;
-}
+		display: flex;
+		width: 100%;
+		text-align: center;
+		justify-content: center;
+		margin-top: 20px;
+		padding-bottom: 20px;
+	}
+
+	.btn {
+		width: 200px;
+		height: 40px;
+		line-height: 40px;
+		border-radius: 2rem;
+		background-color: #418df9;
+		color: #fff;
+	}
 </style>
