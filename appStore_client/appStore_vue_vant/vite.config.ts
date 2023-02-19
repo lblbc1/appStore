@@ -27,6 +27,8 @@ export default defineConfig(({ command, mode }) => {
 				resolves: [VantResolve()],
 			}),
 		],
-
+		server: {
+			host: '0.0.0.0'
+		} 
 	};
 });
