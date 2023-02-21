@@ -8,9 +8,9 @@
   <div>
     <div class="header-search">
       <span class="title-text">应用市场</span>
-      <div class="search_row">
-        <van-icon name="search" />
-        <router-link tag="span" to="/appstore/searchApp">点击搜索</router-link>
+      <div class="search_row" @click="gotoSearch">
+        <van-icon name="search" color="#89939d" />
+        <div class="search-text">点击搜索</div>
       </div>
     </div>
     <van-tabs v-model:active="active" @click-tab="onClickTab">
@@ -73,6 +73,10 @@ const queryApps = async () => {
   apps.value = result.data
 }
 
+const gotoSearch = async (id) => {
+  router.push('/appstore/search')
+}
+
 const gotoAppDetail = async (id) => {
   router.push(`/appstore/appDetail?id=${id}`)
 }
@@ -89,9 +93,6 @@ onMounted(() => {
 <style scoped>
 .header-search {
   display: flex;
-  width: 74%;
-  height: 20px;
-  line-height: 20px;
   margin: 10px 0;
   padding: 5px 0;
 }
@@ -101,10 +102,26 @@ onMounted(() => {
   border-right: 1px solid #f4f4f4;
 }
 .search_row {
-  font-size: 12px;
-  line-height: 21px;
-  border-width: 2px;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: #f4f4f4;
+  border-radius: 10rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.search-img {
+  height: 20px;
+  width: 20px;
+  margin-left: 20px;
+}
+
+.search-text {
+  color: #89939d;
+  margin-left: 10px;
 }
 .row {
   display: flex;
