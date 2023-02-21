@@ -4,13 +4,13 @@
  * 包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
  * 公众号：蓝不蓝编程
  -->
-<template>
+ <template>
   <div>
     <div class="header-search">
       <span class="title-text">应用市场</span>
-      <div class="search_row">
-        <van-icon name="search" />
-        <router-link tag="span" to="/appstore/searchApp">点击搜索</router-link>
+      <div class="search_row" @click="gotoSearch">
+        <van-icon name="search" color="#89939d" />
+        <div class="search-text">点击搜索</div>
       </div>
     </div>
     <van-tabs v-model:active="current" @click-tab="tabSelect">
@@ -48,54 +48,53 @@
   </div>
 </template>
 <script lang="ts">
-import { queryCategories, queryAppsByCategory } from '../common/api'
+import { queryCategories, queryAppsByCategory } from "../common/api";
 export default {
   data() {
     return {
       categories: [],
       apps: [],
-      current: 0
-    }
+      current: 0,
+    };
   },
   mounted() {
-    this.queryCategories()
+    this.queryCategories();
   },
   methods: {
-    tabSelect: function (e) {
-      this.current = e.currentTarget.dataset.id
-      this.queryAppsByCategory()
+    tabSelect: function () {
+      this.queryAppsByCategory();
     },
     queryCategories() {
       queryCategories().then((resp) => {
-        this.categories = resp.data
-        this.queryAppsByCategory()
-      })
+        this.categories = resp.data;
+        this.queryAppsByCategory();
+      });
     },
     queryAppsByCategory() {
       queryAppsByCategory(this.getCurrentCategoryId()).then((resp) => {
-        this.apps = resp.data
-      })
+        this.apps = resp.data;
+      });
     },
 
     getCurrentCategoryId() {
-      return this.categories[this.current].id
+      return this.categories[this.current].id;
+    },
+    gotoSearch() {
+      this.$router.push("/appstore/search");
     },
     gotoAppDetail(id) {
-      this.$router.push(`/appstore/appDetail?id=${id}`)
+      this.$router.push(`/appstore/appDetail?id=${id}`);
     },
     download(apkUrl) {
-      location.href = apkUrl
-    }
-  }
-}
+      location.href = apkUrl;
+    },
+  },
+};
 </script>
 
 <style scoped>
 .header-search {
   display: flex;
-  width: 74%;
-  height: 20px;
-  line-height: 20px;
   margin: 10px 0;
   padding: 5px 0;
 }
@@ -105,10 +104,26 @@ export default {
   border-right: 1px solid #f4f4f4;
 }
 .search_row {
-  font-size: 12px;
-  line-height: 21px;
-  border-width: 2px;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  background-color: #f4f4f4;
+  border-radius: 10rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+  align-items: center;
+  flex: 1;
+}
+
+.search-img {
+  height: 20px;
+  width: 20px;
+  margin-left: 20px;
+}
+
+.search-text {
+  color: #89939d;
+  margin-left: 10px;
 }
 .row {
   display: flex;

@@ -17,7 +17,7 @@ const routes: Array<RouteRecordRaw> = [
 		},
 		component: () => import("../views/AppDetail.vue"),
 	},{
-		path: "/appstore/searchApp",
+		path: "/appstore/search",
 		name: "searchApp",
 		meta: {
 			title: "搜索",
