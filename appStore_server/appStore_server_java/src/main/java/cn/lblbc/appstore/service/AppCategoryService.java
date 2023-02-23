@@ -1,6 +1,6 @@
 package cn.lblbc.appstore.service;
 
-import cn.lblbc.appstore.bean.AppCategoryInfo;
+import cn.lblbc.appstore.bean.CategoryInfo;
 import cn.lblbc.appstore.mapper.AppCategoryMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ public class AppCategoryService {
     @Autowired
     private AppCategoryMapper appCategoryMapper;
 
-    public List<AppCategoryInfo> query() {
+    public List<CategoryInfo> query() {
         return appCategoryMapper.query();
     }
 

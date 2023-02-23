@@ -1,6 +1,6 @@
 package cn.lblbc.appstore.mapper;
 
-import cn.lblbc.appstore.bean.AppCategoryInfo;
+import cn.lblbc.appstore.bean.CategoryInfo;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
@@ -16,6 +16,6 @@ import java.util.List;
 public interface AppCategoryMapper {
 
     @Select(value = "SELECT * FROM appstore_category")
-    List<AppCategoryInfo> query();
+    List<CategoryInfo> query();
 
 }
