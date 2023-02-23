@@ -13,7 +13,7 @@ public class AppInfo {
     private int id;
     private String name;
     private String logoUrl;
-    private String screenShotUrls;
+    private String screenshotUrls;
     private String description;
     private String apkUrl;
     private String fileSize;
