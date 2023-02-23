@@ -14,7 +14,7 @@ class AppInfo(
     var id: String = "",
     var name: String = "",
     var logoUrl: String = "",
-    var screenShotUrls: String = "",
+    var screenshotUrls: String = "",
     var description: String = "",
     var apkUrl: String = "",
     var fileSize: String = "",

@@ -49,7 +49,7 @@ class AppDetailActivity : AppCompatActivity() {
         fileSizeTv.text = appInfo.fileSize
         downloadCountTv.text = appInfo.downloadCount
         loadImage(this, appIv, appInfo.logoUrl)
-        initHorizontalRecyclerView(appInfo.screenShotUrls.split(","))
+        initHorizontalRecyclerView(appInfo.screenshotUrls.split(","))
         installTv.setOnClickListener {
             downloadAndInstall(this, appInfo.apkUrl)
         }
