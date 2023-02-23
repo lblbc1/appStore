@@ -67,7 +67,7 @@ export default {
       this.fileSize = resp.data.fileSize
       this.logoUrl = resp.data.logoUrl
       this.apkUrl = resp.data.apkUrl
-      this.screenShots = resp.data.screenShotUrls.split(',')
+      this.screenShots = resp.data.screenshotUrls.split(',')
       this.description = resp.data.description.replaceAll(/\\n/g, '<br>')
     },
     download() {
