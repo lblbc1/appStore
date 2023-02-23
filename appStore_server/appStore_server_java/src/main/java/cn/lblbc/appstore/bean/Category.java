@@ -9,7 +9,7 @@ import lombok.Data;
  * 公众号：蓝不蓝编程
  */
 @Data
-public class CategoryInfo {
+public class Category {
     private String id;
     private String name;
 }

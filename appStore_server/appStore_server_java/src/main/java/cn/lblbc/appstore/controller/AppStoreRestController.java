@@ -1,7 +1,7 @@
 package cn.lblbc.appstore.controller;
 
 import cn.lblbc.appstore.bean.AppInfo;
-import cn.lblbc.appstore.bean.CategoryInfo;
+import cn.lblbc.appstore.bean.Category;
 import cn.lblbc.appstore.service.AppService;
 import cn.lblbc.appstore.service.AppCategoryService;
 import cn.lblbc.base.Resp;
@@ -26,8 +26,8 @@ public class AppStoreRestController {
     private AppCategoryService appCategoryService;
 
     @GetMapping("categories")
-    public Resp<List<CategoryInfo>> queryCategory() {
-        Resp<List<CategoryInfo>> resp = new Resp<>();
+    public Resp<List<Category>> queryCategory() {
+        Resp<List<Category>> resp = new Resp<>();
         resp.setData(appCategoryService.query());
         return resp;
     }
