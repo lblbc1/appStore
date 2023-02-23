@@ -51,7 +51,7 @@
 					this.fileSize = resp.data.fileSize
 					this.apkUrl = resp.data.apkUrl
 					this.logoUrl = resp.data.logoUrl
-					this.screenShots = resp.data.screenShotUrls.split(',')
+					this.screenShots = resp.data.screenshotUrls.split(',')
 					this.description = resp.data.description.replaceAll(/\\n/g, '<br>')
 				})
 			},
