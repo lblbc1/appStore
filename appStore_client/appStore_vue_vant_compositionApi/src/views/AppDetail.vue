@@ -64,7 +64,7 @@ const queryData = async (id) => {
   fileSize.value = result.data.fileSize
   logoUrl.value = result.data.logoUrl
   apkUrl.value = result.data.apkUrl
-  screenShots.value = result.data.screenShotUrls.split(',')
+  screenShots.value = result.data.screenshotUrls.split(',')
   description.value = result.data.description.replaceAll(/\\n/g,'<br>')
 }
 
