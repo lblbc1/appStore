@@ -12,7 +12,6 @@ const res = new Resolve();
 const router = new Router({
   prefix: '/appstore'
 })
-var querystring = require('querystring')
 
 /**
  * 按照分类查询应用列表
