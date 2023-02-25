@@ -1,7 +1,5 @@
 # Introduction
-App store for programming starters.
-Left：Android、iOS、Huawei HarmonyOS、Flutter、Vue、uni-app。  
-Right：Java、Python、Go、PHP、NodeJS
+App store for programming starters. Including Android、iOS、Huawei HarmonyOS、Flutter、Vue、uni-app, Java、Python、Go、PHP、NodeJS
 
 
 # Preview
