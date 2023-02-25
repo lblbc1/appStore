@@ -16,7 +16,7 @@ import (
 )
 
 type AppController interface {
-	QueryByCategory(categoryId string, c *gin.Context)
+	QueryByCategory(c *gin.Context)
 	QueryById(c *gin.Context)
 	Search(c *gin.Context)
 }
@@ -43,7 +43,8 @@ func (c *appController) Search(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, response)
 }
 
-func (c *appController) QueryByCategory(categoryId string, ctx *gin.Context) {
+func (c *appController) QueryByCategory(ctx *gin.Context) {
+	categoryId := ctx.Query("categoryId")
 	var data []entity.AppInfo = c.repo.QueryByCategory(categoryId)
 	response := helper.SuccessResponse(0, "", data)
 	ctx.JSON(http.StatusOK, response)
