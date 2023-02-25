@@ -1,9 +1,14 @@
-from fastapi import FastAPI, Depends, HTTPException, Response
-
-import dao, networkModels
-from database import SessionLocal, engine, Base
-from sqlalchemy.orm import Session
+# 厦门大学计算机专业 | 前华为工程师
+# 专注《零基础学编程系列》  http://lblbc.cn/blog
+# 包含：Java | 安卓 | 前端 | Flutter | iOS | 小程序 | 鸿蒙
+# 公众号：蓝不蓝编程
 import uvicorn
+from fastapi import FastAPI, Depends
+from sqlalchemy.orm import Session
+
+import dao
+import networkModels
+from database import SessionLocal, engine, Base
 
 Base.metadata.create_all(bind=engine)  # 数据库初始化，如果没有库或者表，会自动创建
 
