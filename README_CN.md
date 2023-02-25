@@ -1,12 +1,12 @@
 
 # 背景
 前面已输出多个系列：
-《[十余种编程语言做个计算器](https://cxyxy.blog.csdn.net/article/details/128761660)》
-《[十余种编程语言写2048小游戏](https://cxyxy.blog.csdn.net/article/details/128696358)》
-《[17种编程语言+10种排序算法](https://cxyxy.blog.csdn.net/article/details/128760848)》
-《[十余种编程语言写博客系统](https://cxyxy.blog.csdn.net/article/details/128755326)》
-《[十余种编程语言写云笔记](https://cxyxy.blog.csdn.net/article/details/128760968)》
-《[N种编程语言做个记事本](https://cxyxy.blog.csdn.net/article/details/128761825)》
+《[十余种编程语言做个计算器](https://cxyxy.blog.csdn.net/article/details/128761660)》  
+《[十余种编程语言写2048小游戏](https://cxyxy.blog.csdn.net/article/details/128696358)》  
+《[17种编程语言+10种排序算法](https://cxyxy.blog.csdn.net/article/details/128760848)》  
+《[十余种编程语言写博客系统](https://cxyxy.blog.csdn.net/article/details/128755326)》  
+《[十余种编程语言写云笔记](https://cxyxy.blog.csdn.net/article/details/128760968)》  
+《[N种编程语言做个记事本](https://cxyxy.blog.csdn.net/article/details/128761825)》  
 
 # 目标
 为编程初学者打造入门学习项目，使用各种主流编程语言来实现。
