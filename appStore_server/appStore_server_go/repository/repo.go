@@ -22,7 +22,7 @@ type repoImpl struct {
 	db *gorm.DB
 }
 
-func CreateAppRepository(db *gorm.DB) Repository {
+func CreateRepository(db *gorm.DB) Repository {
 	return &repoImpl{db: db}
 }
 
