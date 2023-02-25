@@ -23,11 +23,6 @@
 3. 查询应用详情
 4. 按照名称搜索应用
 5. 支持mysql数据库
-# 开发工具
-[下载IntelliJ IDEA](https://cxyxy.blog.csdn.net/article/details/128722658)
-
-# 工程截图
-![](https://img-blog.csdnimg.cn/556d1628cc6d472da6695f07b00ce897.png)
 
 # 开源地址
 [https://gitee.com/lblbc/appstore](https://gitee.com/lblbc/appstore)
