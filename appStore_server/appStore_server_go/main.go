@@ -6,17 +6,13 @@ import (
 	"lblbc.cn/appStore/config"
 	"lblbc.cn/appStore/controllers"
 	"lblbc.cn/appStore/repository"
-	"lblbc.cn/appStore/services"
 )
 
 var (
 	db                 *gorm.DB                       = config.SetupDatabase()
-	categoryRepository repository.CategoryRepository  = repository.NewCategoryRepository(db)
-	noteRepository     repository.AppRepository       = repository.NewAppRepository(db)
-	categoryService    services.CategoryService       = services.NewUserService(categoryRepository)
-	appService         services.AppService            = services.NewAppService(noteRepository)
-	categoryController controllers.CategoryController = controllers.NewCategoryController(categoryService)
-	appController      controllers.AppController      = controllers.NewNoteController(appService)
+	repo               repository.Repository          = repository.CreateAppRepository(db)
+	categoryController controllers.CategoryController = controllers.NewCategoryController(repo)
+	appController      controllers.AppController      = controllers.NewNoteController(repo)
 )
 
 func main() {

@@ -12,7 +12,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"lblbc.cn/appStore/entity"
 	"lblbc.cn/appStore/helper"
-	"lblbc.cn/appStore/services"
+	"lblbc.cn/appStore/repository"
 )
 
 type AppController interface {
@@ -22,29 +22,29 @@ type AppController interface {
 }
 
 type appController struct {
-	noteService services.AppService
+	repo repository.Repository
 }
 
-func NewNoteController(noteService services.AppService) AppController {
-	return &appController{noteService: noteService}
+func NewNoteController(repo repository.Repository) AppController {
+	return &appController{repo: repo}
 }
 
 func (c *appController) QueryById(ctx *gin.Context) {
 	id := ctx.Param("id")
-	var data entity.AppInfo = c.noteService.QueryById(id)
+	var data entity.AppInfo = c.repo.QueryById(id)
 	response := helper.SuccessResponse(0, "", data)
 	ctx.JSON(http.StatusOK, response)
 }
 
 func (c *appController) Search(ctx *gin.Context) {
 	keyword := ctx.Query("keyword")
-	var data []entity.AppInfo = c.noteService.Search(keyword)
+	var data []entity.AppInfo = c.repo.Search(keyword)
 	response := helper.SuccessResponse(0, "", data)
 	ctx.JSON(http.StatusOK, response)
 }
 
 func (c *appController) QueryByCategory(categoryId string, ctx *gin.Context) {
-	var data []entity.AppInfo = c.noteService.QueryByCategory(categoryId)
+	var data []entity.AppInfo = c.repo.QueryByCategory(categoryId)
 	response := helper.SuccessResponse(0, "", data)
 	ctx.JSON(http.StatusOK, response)
 }

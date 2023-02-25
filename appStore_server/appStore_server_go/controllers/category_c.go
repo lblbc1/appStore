@@ -12,7 +12,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"lblbc.cn/appStore/entity"
 	"lblbc.cn/appStore/helper"
-	"lblbc.cn/appStore/services"
+	"lblbc.cn/appStore/repository"
 )
 
 type CategoryController interface {
@@ -20,17 +20,15 @@ type CategoryController interface {
 }
 
 type categoryController struct {
-	categoryService services.CategoryService
+	repo repository.Repository
 }
 
-func NewCategoryController(categoryService services.CategoryService) CategoryController {
-	return &categoryController{
-		categoryService: categoryService,
-	}
+func NewCategoryController(repo repository.Repository) CategoryController {
+	return &categoryController{repo: repo}
 }
 
 func (c *categoryController) QueryCategory(ctx *gin.Context) {
-	var data []entity.Category = c.categoryService.QueryCategory()
+	var data []entity.Category = c.repo.QueryCategory()
 	response := helper.SuccessResponse(0, "", data)
 	ctx.JSON(http.StatusOK, response)
 }
