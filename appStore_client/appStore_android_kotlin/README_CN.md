@@ -7,29 +7,24 @@
 《[十余种编程语言写博客系统](https://cxyxy.blog.csdn.net/article/details/128755326)》
 《[十余种编程语言写云笔记](https://cxyxy.blog.csdn.net/article/details/128760968)》
 《[N种编程语言做个记事本](https://cxyxy.blog.csdn.net/article/details/128761825)》
-# 目标
-为编程初学者打造入门学习项目，使用各种主流编程语言来实现。让想学编程的，一个都不落下。
-![](https://img-blog.csdnimg.cn/faea1470ad3b4e8eba3b093d261d637d.png)
-上述基本涵盖了当前编程开发所有主流语言。
 
+# 目标
+为编程初学者打造入门学习项目，使用各种主流编程语言来实现。
+![](https://img-blog.csdnimg.cn/faea1470ad3b4e8eba3b093d261d637d.png)
 左侧为前端版本：安卓、iOS、鸿蒙、Flutter、Vue、uni-app。
 右侧为服务器端版本：Java、Python、Go、PHP、NodeJS
 
-# 前端效果图
-![](https://img-blog.csdnimg.cn/c3eaa47d8a5e4ba6bef57e71d740d3da.png)
-# 支持特性
-1. 查询应用分类
-2. 查询分类下应用
-3. 查询应用详情
-4. 搜索应用
-5. 支持mysql数据库
+# 安卓版效果图
+![](https://img-blog.csdnimg.cn/06688e44868f4c96b6383abcb98b8d83.png)
 # 开发工具
-[下载Visual Studio Code](https://cxyxy.blog.csdn.net/article/details/128722652)
-# 工程截图
-![](https://img-blog.csdnimg.cn/a5d4c7a865174c5c8549e69863683ac1.png)
+[下载Android Studio](https://cxyxy.blog.csdn.net/article/details/107098873)
 
+# 工程截图
+![](https://img-blog.csdnimg.cn/48a0c8030c2f47e7921f7d3dac51cc34.png)
 # 开源地址
 [https://gitee.com/lblbc/appstore](https://gitee.com/lblbc/appstore)
+![](https://img-blog.csdnimg.cn/2583a18b2a324be4903d390542bbcfe9.png)
+
 
 # 关于
 厦门大学计算机专业|华为八年高级工程师     

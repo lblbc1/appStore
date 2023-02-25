@@ -1,9 +1,20 @@
-主要界面：
+# Introduction
+App store for programming starters.
+![](https://img-blog.csdnimg.cn/faea1470ad3b4e8eba3b093d261d637d.png)
+Left：Android、iOS、Huawei HarmonyOS、Flutter、Vue、uni-app。  
+Right：Java、Python、Go、PHP、NodeJS
 
-![输入图片说明](screenShots/1.png)
-![输入图片说明](screenShots/2.png)
-![输入图片说明](screenShots/3.png)
-![输入图片说明](screenShots/4.png)
-![输入图片说明](screenShots/5.png)
-开源地址： 
-https://gitee.com/lblbc/shop-pub
+
+# Preview
+![](https://img-blog.csdnimg.cn/06688e44868f4c96b6383abcb98b8d83.png)
+
+# Open Source
+[https://gitee.com/lblbc/appstore](https://gitee.com/lblbc/appstore)
+
+# About Me
+Graduated from China Xiamen University  
+Ever worked for Huawei as software developer  
+focus on programming learning. http://lblbc.cn/blog  
+Including：Android(Java、Kotlin)、iOS(SwiftUI)、Flutter(Dart)、Window Desktop(C#)、Front End(WeChat mini-program、uni-app、vue)、Back End（Java、Kotlin、NodeJS、Python、PHP、Go、C、C++）、HarmonyOS(Huawei)  
+Follow me on China wechat：蓝不蓝编程  
+![](https://img-blog.csdnimg.cn/4c62bfb4cca540b1a26825f2b1a8af7e.png)

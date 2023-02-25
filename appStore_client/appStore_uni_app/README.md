@@ -1,20 +1,15 @@
 # Introduction
-Network note for programming starters.
+App store for programming starters.
 ![](https://img-blog.csdnimg.cn/faea1470ad3b4e8eba3b093d261d637d.png)
 Left：Android、iOS、Huawei HarmonyOS、Flutter、Vue、uni-app。  
 Right：Java、Python、Go、PHP、NodeJS
 
 
 # Preview
-![](https://img-blog.csdnimg.cn/19ffb2f1a2454d30af52184c5bf44228.png)
-# Server Features
- 1. Register
- 2. Login
- 3. Add\Delete\Modify\Query note
+![](https://img-blog.csdnimg.cn/40d7c8b649764f2cbbcbd21cc5372779.png)
 
 # Open Source
-[https://gitee.com/lblbc/cloud-note](https://gitee.com/lblbc/cloud-note)
-![](https://img-blog.csdnimg.cn/2f0b2bfe7c724d32bb3b3c938791c143.png)
+[https://gitee.com/lblbc/appstore](https://gitee.com/lblbc/appstore)
 
 
 # About Me
