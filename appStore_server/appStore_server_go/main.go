@@ -12,7 +12,7 @@ var (
 	db                 *gorm.DB                       = config.SetupDatabase()
 	repo               repository.Repository          = repository.CreateRepository(db)
 	categoryController controllers.CategoryController = controllers.NewCategoryController(repo)
-	appController      controllers.AppController      = controllers.NewNoteController(repo)
+	appController      controllers.AppController      = controllers.NewAppController(repo)
 )
 
 func main() {

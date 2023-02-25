@@ -25,7 +25,7 @@ type appController struct {
 	repo repository.Repository
 }
 
-func NewNoteController(repo repository.Repository) AppController {
+func NewAppController(repo repository.Repository) AppController {
 	return &appController{repo: repo}
 }
 
